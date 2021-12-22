@@ -25,13 +25,18 @@ kotlin {
     
     sourceSets {
         val ktorVersion = "1.6.7"
+        val koinVersion = "3.1.4"
+        val ktxCoroutinesVersion = "1.5.2"
 
         val commonMain by getting {
             dependencies {
                 implementation("io.ktor:ktor-client-core:$ktorVersion")
                 implementation("io.ktor:ktor-client-serialization:$ktorVersion")
+                implementation("io.ktor:ktor-client-json:$ktorVersion")
+                implementation("io.ktor:ktor-client-logging:$ktorVersion")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.1")
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$ktxCoroutinesVersion")
+                implementation("io.insert-koin:koin-core:$koinVersion")
             }
         }
         val commonTest by getting {
@@ -43,7 +48,7 @@ kotlin {
         val androidMain by getting {
             dependencies {
                 implementation("io.ktor:ktor-client-android:$ktorVersion")
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$ktxCoroutinesVersion")
             }
         }
         val androidTest by getting {
