@@ -23,6 +23,9 @@ fun initKoin(appDeclaration: KoinAppDeclaration = {}) = startKoin {
     modules(commonModule)
 }
 
+// For iOS
+fun initKoin() = initKoin {  }
+
 private val httpClient = HttpClient {
     install(JsonFeature) {
         val json = kotlinx.serialization.json.Json { ignoreUnknownKeys = true }

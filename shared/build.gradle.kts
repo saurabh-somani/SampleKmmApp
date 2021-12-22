@@ -26,7 +26,7 @@ kotlin {
     sourceSets {
         val ktorVersion = "1.6.7"
         val koinVersion = "3.1.4"
-        val ktxCoroutinesVersion = "1.5.2"
+        val ktxCoroutinesVersion = "1.5.2-native-mt" // Need native-mt extension to make it compatible with iOS
 
         val commonMain by getting {
             dependencies {
