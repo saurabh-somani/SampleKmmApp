@@ -1,6 +1,7 @@
 package com.example.samplekmmapp.android.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,5 +25,15 @@ class MainFragment : Fragment() {
         binding.viewModel = viewModel
 
         return binding.root
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("MainViewModel", "onStart: ")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("MainViewModel", "onStop: ")
     }
 }
