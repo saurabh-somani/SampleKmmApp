@@ -13,7 +13,7 @@ import org.koin.dsl.module
 
 val commonModule = module {
 
-    factory<MainRepo> { MainRepoImpl(get()) }
+    factory<MainRepo> { MainRepoImpl() }
     factory { NetworkApi(get()) }
     single { httpClient }
 }
